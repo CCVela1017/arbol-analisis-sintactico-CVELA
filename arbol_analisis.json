@@ -1,0 +1,315 @@
+{
+  "Program": [
+    {
+      "Funcion": [
+        "IDENTIFIER",
+        "suma"
+      ],
+      "Parametros": [
+        {
+          "Parametro": [
+            "IDENTIFIER",
+            "a"
+          ],
+          "Tipo": [
+            "KEYWORD",
+            "int"
+          ]
+        },
+        {
+          "Parametro": [
+            "IDENTIFIER",
+            "b"
+          ],
+          "Tipo": [
+            "KEYWORD",
+            "int"
+          ]
+        }
+      ],
+      "Cuerpo": [
+        {
+          "Asignacion": [
+            "IDENTIFIER",
+            "c"
+          ],
+          "Expresion": {
+            "Operacion": [
+              "OPERATOR",
+              "+"
+            ],
+            "Izquierda": {
+              "Identificador": [
+                "IDENTIFIER",
+                "a"
+              ]
+            },
+            "Derecha": {
+              "Identificador": [
+                "IDENTIFIER",
+                "b"
+              ]
+            }
+          }
+        },
+        {
+          "Print": {
+            "Cadena": "La suma de a y b es "
+          }
+        },
+        {
+          "If": {
+            "Operacion": [
+              "OPERATOR",
+              ">"
+            ],
+            "Izquierda": {
+              "Identificador": [
+                "IDENTIFIER",
+                "c"
+              ]
+            },
+            "Derecha": {
+              "Numero": [
+                "NUMBER",
+                "10"
+              ]
+            }
+          },
+          "Cuerpo": [
+            {
+              "Print": {
+                "Identificador": [
+                  "IDENTIFIER",
+                  "c"
+                ]
+              }
+            }
+          ],
+          "Elseif": [
+            {
+              "Elif": {
+                "Operacion": [
+                  "OPERATOR",
+                  "<"
+                ],
+                "Izquierda": {
+                  "Identificador": [
+                    "IDENTIFIER",
+                    "c"
+                  ]
+                },
+                "Derecha": {
+                  "Numero": [
+                    "NUMBER",
+                    "10"
+                  ]
+                }
+              },
+              "Cuerpo": [
+                {
+                  "Print": {
+                    "Identificador": [
+                      "IDENTIFIER",
+                      "c"
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "Else": {
+            "Else": [
+              {
+                "Print": {
+                  "Identificador": [
+                    "IDENTIFIER",
+                    "c"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "While": {
+            "Operacion": [
+              "OPERATOR",
+              ">"
+            ],
+            "Izquierda": {
+              "Identificador": [
+                "IDENTIFIER",
+                "c"
+              ]
+            },
+            "Derecha": {
+              "Numero": [
+                "NUMBER",
+                "10"
+              ]
+            }
+          },
+          "Cuerpo": [
+            {
+              "Asignacion": [
+                "IDENTIFIER",
+                "c"
+              ],
+              "Expresion": {
+                "Operacion": [
+                  "OPERATOR",
+                  "-"
+                ],
+                "Izquierda": {
+                  "Identificador": [
+                    "IDENTIFIER",
+                    "c"
+                  ]
+                },
+                "Derecha": {
+                  "Numero": [
+                    "NUMBER",
+                    "1"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "For": {
+            "Operacion": [
+              "OPERATOR",
+              "="
+            ],
+            "Izquierda": {
+              "Identificador": [
+                "IDENTIFIER",
+                "i"
+              ]
+            },
+            "Derecha": {
+              "Numero": [
+                "NUMBER",
+                "0"
+              ]
+            }
+          },
+          "Condicion": {
+            "Operacion": [
+              "OPERATOR",
+              "<"
+            ],
+            "Izquierda": {
+              "Identificador": [
+                "IDENTIFIER",
+                "i"
+              ]
+            },
+            "Derecha": {
+              "Numero": [
+                "NUMBER",
+                "10"
+              ]
+            }
+          },
+          "Actualizacion": {
+            "Actualizacion": "i",
+            "Operador": "++"
+          },
+          "Cuerpo": [
+            {
+              "Asignacion": [
+                "IDENTIFIER",
+                "c"
+              ],
+              "Expresion": {
+                "Operacion": [
+                  "OPERATOR",
+                  "+"
+                ],
+                "Izquierda": {
+                  "Identificador": [
+                    "IDENTIFIER",
+                    "c"
+                  ]
+                },
+                "Derecha": {
+                  "Numero": [
+                    "NUMBER",
+                    "1"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Retorno": {
+            "Identificador": [
+              "IDENTIFIER",
+              "c"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Funcion": [
+        "IDENTIFIER",
+        "main"
+      ],
+      "Parametros": [],
+      "Cuerpo": [
+        {
+          "Asignacion": [
+            "IDENTIFIER",
+            "a"
+          ],
+          "Expresion": {
+            "Numero": [
+              "NUMBER",
+              "5"
+            ]
+          }
+        },
+        {
+          "Asignacion": [
+            "IDENTIFIER",
+            "b"
+          ],
+          "Expresion": {
+            "Numero": [
+              "NUMBER",
+              "10"
+            ]
+          }
+        },
+        {
+          "Asignacion": [
+            "IDENTIFIER",
+            "c"
+          ],
+          "Expresion": null
+        },
+        {
+          "Print": {
+            "Identificador": [
+              "IDENTIFIER",
+              "c"
+            ]
+          }
+        },
+        {
+          "Retorno": {
+            "Numero": [
+              "NUMBER",
+              "0"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import re
 
 
 token_patron = {
-  "KEYWORD": r'\b(if|else|for|while|print|return|int|float|void)\b',
+  "KEYWORD": r'\b(if|else|for|while|print|return|int|float|void|input)\b',
   "IDENTIFIER": r'\b[a-zA-Z_][a-zA-Z0-9_]*\b',
   "NUMBER": r'\b\d+(\.\d+)?\b',
   "OPERATOR": r'<=|>=|==|!=|\+\+|--|\+=|-=|\*=|/=|&&|\|\||&|\||[+\-*/=<>]',  # \<=\>=\==\++\--\+=\-=\*=\/= # & && | ||
@@ -343,6 +343,20 @@ class Parser:
     val = NodoActualizacion2(self.coincidir("IDENTIFIER")[1], self.coincidir("OPERATOR")[1], self.expresion())
     self.coincidir("DELIMITER")
     return val
+  
+  def input(self):
+    self.coincidir("KEYWORD")
+    self.coincidir("DELIMITER")
+    if self.obtener_token_actual()[1] == '"':
+      cadena = self.cadenas()
+      self.coincidir("DELIMITER")
+      self.coincidir("DELIMITER")
+      return NodoInput(cadena)
+    else:
+      exp = self.expresion();
+      self.coincidir("DELIMITER");
+      self.coincidir("DELIMITER");
+      return NodoInput(exp)
 
 
 class NodoAST:
@@ -897,6 +911,17 @@ class NodoActualizacion2(NodoAST):
     elif self.operador == "/=":
       codigo += f'           idiv eax\n'
     return codigo
+  
+class NodoInput(NodoAST):
+  # Nodo que representa una entrada de datos
+  def __init__(self, nombre):
+      self.nombre = nombre
+
+  def traducir(self):
+      return f"{self.nombre[1]} = input()"
+
+  def generar_codigo(self):
+      return f'           invoke StdIn, offset {self.nombre[1]}\n'
 
 
 import json
@@ -1051,6 +1076,8 @@ print("Comandos: ")
 print(f'\\masm32\\bin\ml /c /coff /I"C:\\masm32\\include" projects/{name}.asm')
 print(f'C:\\masm32\\bin\\link.exe /subsystem:console {name}.obj')
 print(f'{name}.exe')
+
+
 
 
 
